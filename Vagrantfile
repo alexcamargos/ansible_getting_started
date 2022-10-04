@@ -62,6 +62,11 @@ Vagrant.configure("2") do |config|
         chmod 400 /root/.ssh/ansible_lab*
         chmod 400 /home/vagrant/.ssh/ansible_lab*
 
+        # Change the owner.
+        sudo chown vagrant .ssh/ansible_lab*
+        # Change the group.
+        sudo chgrp vagrant .ssh/ansible_lab*
+
         # Create the authorized_keys file.
         cat /root/.ssh/ansible_lab.pub >> /root/.ssh/authorized_keys
         cat /home/vagrant/.ssh/ansible_lab.pub >> /home/vagrant/.ssh/authorized_keys
