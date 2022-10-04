@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yet Another Random Password Generator - YARPG</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <h1>Yet Another Random Password Generator - YARPG</h1>
+
+        <div class="content">
+            <input type="text" name="yarpg" id="yarpg" placeholder="" readonly>
+
+            <picture>
+                <img class="btn-copy" src="assets/img/copy.svg" alt="Copy button" srcset="" onclick="copyPassword();">
+            </picture>
+
+        </div>
+
+        <div class="btn-generate" onclick="passwordGenerator();">GENERATE</div>
+
+        <div class="config">
+            <div class="password-length__content">
+                <div class="password-length__content">
+                    <h3>Comprimento: <span id="length_value"></span></h3>
+                    <label for="password-length" class="label-password__length">
+                        <h3>6</h3>
+                        <input type="range" name="password-length" id="password-length" min="6" max="32" value="16"
+                            oninput="changePasswordLengthValue();">
+                        <h3>32</h3>
+                    </label>
+                </div>
+
+                <div class="password-config">
+                    <label for="ascii_uppercase">
+                        <input type="checkbox" name="ascii_uppercase" id="ascii_uppercase" checked>
+                        A-Z
+                    </label>
+                    <label for="ascii_lowercase">
+                        <input type="checkbox" name="ascii_lowercase" id="ascii_lowercase" checked>
+                        a-z
+                    </label>
+                    <label for="digits">
+                        <input type="checkbox" name="digits" id="digits" checked>
+                        0-9
+                    </label> <label for="punctuation">
+                        <input type="checkbox" name="punctuation" id="punctuation">
+                        !@#$%^&*
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="alert-box" class="alert-box alert-box__hidden">
+            <h1>Yet Another Random Password Generator - YARPG</h1>
+            <p>"New passaword Copied: <span id="new-password"></span>"</p>
+        </div>
+    </div>
+
+    <script src="assets/js/yarpg.js"></script>
+
+</body>
+
+</html>

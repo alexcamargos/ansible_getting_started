@@ -1,0 +1,16 @@
+- hosts: apache
+  become: yes
+  tasks:
+  - name: Install Apache HTTP Server Project
+    package:
+      name: ['apache2']
+      state: present
+  - name: Ativando a inicialização automática do Apache
+    service:
+      name: apache2
+      state: started
+      enabled: yes
+  - name: Copiando Conteúdo do site de teste
+    copy:
+      src: /vagrant/www/
+      dest: /var/www/html/
